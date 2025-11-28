@@ -32,6 +32,36 @@ Incluye:
 - Vanilla JavaScript
 - Bootstrap 5
 
+🚀 Cómo clonar el repositorio y levantar el servidor
+1️⃣ Clonar el repositorio
+
+Abrí una terminal y ejecutá:
+git clone https://github.com/Minniec92/Metodologia2.git
+Luego ingresá a la carpeta del proyecto:
+cd Metodologia2 
+2️⃣ Instalar dependencias
+
+Asegurate de tener Node.js instalado.
+En la raíz del proyecto corré:
+npm install
+Una vez que se completo la instalación
+npm run dev 
+El servidor se va a levantar en:
+http://localhost:3000
+Para probar el sistema :
+4️⃣ Probar el sistema
+Podés usar extensiones como Thunder Client (en VSCode) para no instalar postman .
+Rutas principales disponibles:
+
+GET /api/turnos → Lista de turnos
+
+POST /api/turnos → Crear turno
+
+PUT /api/turnos/:id → Editar turno
+
+DELETE /api/turnos/:id → Eliminar turno
+
+--------------------------------------------------------------------------
 
 A continuación, una explicación de los patrones de diseño elegidos:
 
