@@ -101,6 +101,58 @@ El sistema guarda todos los turnos en:
 📁 data/turnos.json
 
 🌐 API REST — CRUD Completo
+## 🧪 Casos de uso y casos de prueba del CRUD
+
+A continuación se detallan los principales casos de uso del sistema y cómo se probaron:
+
+### Caso de uso 1: Crear turno
+
+- **Actor:** Recepcionista / Usuario del sistema
+- **Precondición:** El servidor está en ejecución.
+- **Flujo principal:**
+  1. El usuario completa el formulario de creación de turno en el frontend.
+  2. El sistema envía una petición `POST /api/turnos` con los datos del turno.
+  3. El backend valida los datos, crea el turno mediante la *Factory* y lo guarda en `data/turnos.json`.
+  4. Se notifica el evento `TURNO_CREADO` al *Observer*.
+  5. El frontend muestra un mensaje de confirmación.
+- **Resultado esperado:**  
+  - El nuevo turno aparece en el listado.  
+  - El archivo `data/turnos.json` contiene el turno creado.
+
+### Caso de uso 2: Listar turnos
+
+- **Actor:** Cualquier usuario del sistema.
+- **Flujo:**
+  1. El usuario ingresa a la pantalla principal.
+  2. El frontend realiza un `GET /api/turnos`.
+  3. El backend devuelve la lista completa de turnos leyendo `data/turnos.json`.
+- **Resultado esperado:**  
+  - La tabla de turnos se llena correctamente con los datos existentes.
+
+### Caso de uso 3: Actualizar turno
+
+- **Actor:** Recepcionista / Usuario del sistema.
+- **Flujo:**
+  1. El usuario selecciona un turno y edita sus datos desde la interfaz.
+  2. El frontend envía `PUT /api/turnos/:id` con los nuevos datos.
+  3. El backend actualiza el turno en memoria y en `data/turnos.json`.
+  4. Se dispara el evento `TURNO_ACTUALIZADO`.
+- **Resultado esperado:**  
+  - El turno se muestra actualizado en el listado.  
+  - El JSON refleja los cambios.
+
+### Caso de uso 4: Eliminar turno
+
+- **Actor:** Recepcionista / Usuario del sistema.
+- **Flujo:**
+  1. El usuario hace clic en "Eliminar" en un turno.
+  2. El frontend ejecuta `DELETE /api/turnos/:id`.
+  3. El backend elimina el turno del arreglo y del archivo `data/turnos.json`.
+  4. Se dispara el evento `TURNO_ELIMINADO`.
+- **Resultado esperado:**  
+  - El turno desaparece del listado.  
+  - El archivo JSON ya no contiene ese turno.
+
 
 | Método | Ruta              | Función          |
 | ------ | ----------------- | ---------------- |
