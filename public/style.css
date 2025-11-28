@@ -1,0 +1,8 @@
+body {
+  padding-bottom: 40px;
+}
+
+.table input,
+.table select {
+  min-width: 120px;
+}

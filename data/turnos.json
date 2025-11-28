@@ -16,8 +16,22 @@
   {
     "id": 1763988997686,
     "tipo": "presencial",
-    "paciente": "Marianito Actualizado",
+    "paciente": "Ernestito",
     "fecha": "2025-11-22",
     "hora": "12:45"
+  },
+  {
+    "id": 1764028826144,
+    "tipo": "virtual",
+    "paciente": "Kiru",
+    "fecha": "2025-11-24",
+    "hora": "21:00"
+  },
+  {
+    "id": 1764032964724,
+    "tipo": "virtual",
+    "paciente": "Orlando",
+    "fecha": "2025-11-14",
+    "hora": "22:22"
   }
 ]
